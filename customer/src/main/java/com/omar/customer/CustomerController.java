@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public record CustomerController (){
 
     @PostMapping
-    public void registerCustomer(@RequestBody CustomerRequest customerRequest) {
+    public void registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest) {
         //TODO: process POST request
-        log.info("Registering customer: {}", customerRequest);
+        log.info("Registering customer: {}", customerRegistrationRequest);
     }
     
 
