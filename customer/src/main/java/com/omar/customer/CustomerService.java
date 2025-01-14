@@ -18,12 +18,16 @@ public class CustomerService {
             .lastName(request.lastName())
             .email(request.email())
             .build();
-            restTemplate.getForObject(
+            customerRepository.saveAndFlush(customer);
+            FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
                 "http://localhost:8081/api/v1/fraud-check/{customerId}",
-                String.class
+                FraudCheckResponse.class,
+                customer.getId()
             );
+            if(fraudCheckResponse.isFraudulent()){
+                throw new IllegalStateException("Customer is a fraudster");
+            }
             
-        customerRepository.save(customer);
     }
 
 }
