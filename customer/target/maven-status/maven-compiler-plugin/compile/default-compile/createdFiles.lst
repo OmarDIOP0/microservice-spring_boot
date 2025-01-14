@@ -1,6 +1,9 @@
 com\omar\customer\Customer.class
+com\omar\customer\CustomerConfig.class
 com\omar\customer\CustomerApplication.class
 com\omar\customer\CustomerRegistrationRequest.class
 com\omar\customer\CustomerController.class
 com\omar\customer\Customer$CustomerBuilder.class
+com\omar\customer\FraudCheckResponse.class
+com\omar\customer\CustomerRepository.class
 com\omar\customer\CustomerService.class

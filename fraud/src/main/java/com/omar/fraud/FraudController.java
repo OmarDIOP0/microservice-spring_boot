@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/v1/fraud-check")
+@RequestMapping("api/v1/fraud-check")
 @AllArgsConstructor
 public class FraudController {
     private final FraudCheckService fraudCheckService;
 
     @GetMapping(path = "{customerId}")
-    public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId ) {
-        boolean isFraudulentCustomer =  fraudCheckService.isFraudulentCustomer(customerId);
+    public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerID ) {
+        boolean isFraudulentCustomer =  fraudCheckService.isFraudulentCustomer(customerID);
         return new FraudCheckResponse(isFraudulentCustomer);
     }
     

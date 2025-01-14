@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import lombok.AllArgsConstructor;
+import lombok.Value;
 
 @Service
 @AllArgsConstructor
@@ -12,6 +13,7 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
+        
         //TODO Auto-generated method stub
         Customer customer = Customer.builder()
             .firstName(request.firstName())
@@ -19,6 +21,8 @@ public class CustomerService {
             .email(request.email())
             .build();
             customerRepository.saveAndFlush(customer);
+            // @Value("${fraud.service.url}")
+            // private String fraudServiceUrl;
             FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
                 "http://localhost:8081/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,

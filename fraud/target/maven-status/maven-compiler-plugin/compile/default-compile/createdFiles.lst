@@ -1,1 +1,7 @@
+com\omar\fraud\FraudCheckHistoryRepositry.class
+com\omar\fraud\FraudCheckResponse.class
+com\omar\fraud\FraudController.class
 com\omar\fraud\FraudApplication.class
+com\omar\fraud\FraudCheckService.class
+com\omar\fraud\FraudCheckHistory.class
+com\omar\fraud\FraudCheckHistory$FraudCheckHistoryBuilder.class
