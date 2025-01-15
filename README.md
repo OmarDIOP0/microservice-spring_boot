@@ -1,11 +1,13 @@
-# Microservices Application with Spring Boot, PostgreSQL, and pgAdmin
+# Microservices Application with Spring Boot, pgAdmin/PostgreSQL and Eureka Server 
 
 ## Description
 Ce projet est une application basée sur une architecture de microservices utilisant **Spring Boot**. Il contient deux services principaux : 
 - **Customer Service** : pour gérer les informations des clients.
 - **Fraud Service** : pour vérifier si un client est frauduleux.
 
-La base de données PostgreSQL est utilisée pour le stockage, et **pgAdmin** est utilisé pour la gestion de la base de données.
+La base de données **PostgreSQL** est utilisée pour le stockage, et **pgAdmin** est utilisé pour la gestion de la base de données.
+
+Le **Eureka Server** va permettre de gerer la communication et les instances des microservices
 
 ---
 
@@ -17,8 +19,12 @@ Voici un aperçu des microservices :
 2. **Fraud Service**
    - Permet de vérifier si un client est frauduleux ou non.
    - Stocke les enregistrements des clients signalés comme fraudeurs.
+3. **Eureka Server**
+   - Permet de centraliser les microservices
+   - Permet de faire la communication entre les microservices
+   - Permet de gerer les instances des microservices
 
-Chaque microservice utilise sa propre base de données PostgreSQL.
+Chaque microservice utilise sa propre base de données **PostgreSQL**.
 
 ---
 
