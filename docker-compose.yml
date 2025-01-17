@@ -28,6 +28,22 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+  
+  zipkin:
+    image: openzipkin/zipkin:2.24
+    container_name: zipkin
+    environment:
+      - STORAGE_TYPE=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=zipkin
+      - POSTGRES_USER=customer
+      - POSTGRES_PASS=customer
+    ports:
+      - "9411:9411"  # Accédez à Zipkin via http://localhost:9411
+    networks:
+      - postgres
+    restart: unless-stopped
 
 networks:
   postgres:

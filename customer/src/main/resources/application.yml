@@ -16,6 +16,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  
+  sleuth:
+    sampler:
+      probability: 1.0 # Permet de tracer 100 % des requêtes
+  zipkin:
+    base-url: http://localhost:9411
 
 eureka:
   client:
@@ -24,15 +30,17 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
-management:
-  tracing:
-    enabled: true
-    sampling:
-      probability: 1.0 
 
-micrometer:
-  tracing:
-    reporting:
-      zipkin:
-        enabled: true
-        endpoint: http://localhost:9411/api/v2/spans 
+
+# management:
+#   tracing:
+#     enabled: true
+#     sampling:
+#       probability: 1.0 
+
+# micrometer:
+#   tracing:
+#     reporting:
+#       zipkin:
+#         enabled: true
+#         endpoint: http://localhost:9411/api/v2/spans 
